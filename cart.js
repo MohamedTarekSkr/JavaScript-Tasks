@@ -19,7 +19,7 @@ const addProduct = function () {
 </tr>`
     );
   } else {
-    alert(`plz insert values`);
+    alert(`Please insert Missing values`);
   }
 };
 addBTN.addEventListener(`click`, addProduct);

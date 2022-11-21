@@ -11,16 +11,19 @@ const addProduct = function () {
   if (
     !Number(productName.value) &&
     Number.isInteger(Number(price.value)) &&
-    Number.isInteger(Number(quantity.value))
+    Number.isInteger(Number(quantity.value)) &&
+    price.value &&
+    quantity.value &&
+    productName.value
   ) {
     let total = Number(price.value) * Number(quantity.value);
     products.insertAdjacentHTML(
       `afterbegin`,
       `<tr>
   <th>${productName.value}</th>
-  <th>${price.value}</th>
+  <th>${price.value} USD</th>
   <th>${quantity.value}</th>
-  <th>${total}</th>
+  <th>${total} USD</th>
   <th><button class="btn btn-primary delete">Remove</button></th>
 </tr>`
     );

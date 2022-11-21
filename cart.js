@@ -23,7 +23,7 @@ const addProduct = function () {
 </tr>`
     );
   } else {
-    alert(`Please insert Missing values`);
+    alert(`Wrong Or Missing input ,please ty again`);
   }
 };
 addBTN.addEventListener(`click`, addProduct);

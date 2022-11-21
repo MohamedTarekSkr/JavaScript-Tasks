@@ -5,6 +5,8 @@ const quantity = document.getElementById(`quantity`);
 const addBTN = document.getElementById(`add-btn`);
 const products = document.getElementById(`products`);
 /////////////////////////
+
+// Add Button
 const addProduct = function () {
   if (
     !Number(productName.value) &&
@@ -19,7 +21,7 @@ const addProduct = function () {
   <th>${price.value}</th>
   <th>${quantity.value}</th>
   <th>${total}</th>
-  <th><button class="delete">Remove</button></th>
+  <th><button class="btn btn-primary delete">Remove</button></th>
 </tr>`
     );
   } else {
@@ -28,9 +30,10 @@ const addProduct = function () {
 };
 addBTN.addEventListener(`click`, addProduct);
 
-document.addEventListener("click", function (e) {
-  e.preventDefault();
-  if (e.target.className == "delete") {
+// Remove Button
+const removeProduct = function (e) {
+  if (e.target.classList.contains(`delete`)) {
     console.log(e.target.parentNode.parentNode.remove());
   }
-});
+};
+document.addEventListener("click", removeProduct);

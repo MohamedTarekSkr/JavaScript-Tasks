@@ -36,7 +36,7 @@ addBTN.addEventListener(`click`, addProduct);
 // Remove Button
 const removeProduct = function (e) {
   if (e.target.classList.contains(`delete`)) {
-    console.log(e.target.parentNode.parentNode.remove());
+    return e.target.parentNode.parentNode.remove()
   }
 };
 document.addEventListener("click", removeProduct);

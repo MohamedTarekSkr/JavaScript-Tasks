@@ -6,8 +6,12 @@ const addBTN = document.getElementById(`add-btn`);
 const products = document.getElementById(`products`);
 /////////////////////////
 const addProduct = function () {
-  if (productName.value && price && quantity) {
-    let total = price.value * 1 * quantity.value * 1;
+  if (
+    !Number(productName.value) &&
+    Number.isInteger(Number(price.value)) &&
+    Number.isInteger(Number(quantity.value))
+  ) {
+    let total = Number(price.value) * Number(quantity.value);
     products.insertAdjacentHTML(
       `afterbegin`,
       `<tr>
